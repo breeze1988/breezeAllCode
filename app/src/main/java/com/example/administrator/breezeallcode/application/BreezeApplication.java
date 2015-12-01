@@ -54,3 +54,16 @@ public class BreezeApplication extends Application{
         return mInstance;
     }
 }
+
+//代码中一些细节
+//
+//        尽量使用9path
+//        Adapter要使用convertView
+//        各种监听，广播等，注册的同时要记得取消注册
+//        使用完对象要及时销毁，能使用局部变量的不要使用全局变量，功能用完成后要去掉对他的引用
+//        切勿在循环调用的地方去产生对象，比如在getview()里new OnClicklistener(),这样的话，拖动的时候会new大量的对象出来。
+//        使用Android推荐的数据结构，比如HashMap替换为SparseArray，避免使用枚举类型（在Android平台，枚举类型的内存消耗是Static常量的的2倍）
+//        使用lint工具优化工程
+//        字符串拼接使用StringBuilder或者StringBuffer
+//        尽量使用静态匿名内部类，如果需要对外部类的引用，使用弱引用
+//        for循环的使用 用 final int size = array.length; for(int i = 0; i< size;i++) 来替代： for(int i =0;i < array.length;i++)
