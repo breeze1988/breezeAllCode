@@ -19,6 +19,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".Activity.ProviderActivity"></activity>
+
 
         <provider
             android:authorities="com.example.administrator.breezeallcode.ContentProvider.BookProvider"
