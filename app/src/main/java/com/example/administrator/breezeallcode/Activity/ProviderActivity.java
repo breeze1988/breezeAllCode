@@ -32,7 +32,10 @@ public class ProviderActivity extends Activity {
             Logger.i("query book:" + book.toString());
         }
         bookCursor.close();
+
     }
+
+
 }
 
 class Book {
