@@ -18,6 +18,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".Activity.ProviderActivity"></activity>
+
+
+        <provider
+            android:authorities="com.example.administrator.breezeallcode.ContentProvider.BookProvider"
+            android:name=".ContentProvider.BookProvider"
+            android:process=":provider"
+            android:permission="com.breeze.provider"></provider>
     </application>
+
 
 </manifest>
