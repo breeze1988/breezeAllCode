@@ -6,6 +6,8 @@ import android.graphics.BitmapFactory;
 
 import com.example.administrator.breezeallcode.util.Logger;
 
+import java.io.FileDescriptor;
+
 /**
  * Created by Administrator on 2015/12/18.
  * 完成图片压缩功能
@@ -24,6 +26,15 @@ public class ImageResizer {
         options.inSampleSize = calculateInSampleSize(options, reqWidth, requHeight);
         options.inJustDecodeBounds = false;
         return BitmapFactory.decodeResource(res, resId, options);
+    }
+
+    public Bitmap decodeSampledBitmapFromFileDescriptor(FileDescriptor fd, int reqWidth, int reqHeight) {
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFileDescriptor(fd, null, options);
+        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeFileDescriptor(fd, null, options);
     }
 
 
