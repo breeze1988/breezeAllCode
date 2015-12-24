@@ -6,4 +6,8 @@ package com.example.administrator.breezeallcode.constant;
 public class Constant {
 
     public static final boolean IsTest = true;
+
+    public static final String KEY_POSITION = "POSITION";
+
+    public static final String KEY_TITLE = "TITLE";
 }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -11,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.administrator.breezeallcode.Activity.ProviderActivity;
+import com.example.administrator.breezeallcode.constant.Constant;
+import com.example.administrator.breezeallcode.view.fragment.MainFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +23,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        if (savedInstanceState == null) {
+            Fragment fragment = MainFragment.newMainFragement();
+            Bundle bundle = new Bundle();
+            bundle.putString(Constant.KEY_TITLE, "main");
+            fragment.setArguments(bundle);
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_container, fragment).commit();
+        }
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

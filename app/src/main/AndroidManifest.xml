@@ -21,6 +21,13 @@
 
         <activity android:name=".Activity.ProviderActivity"></activity>
 
+        <activity
+            android:name=".view.activity.SubClassifiyActivity"
+            android:launchMode="singleTask"></activity>
+        <activity
+            android:name=".view.activity.ThirdLevelClassifyActivity"
+            android:launchMode="singleTask"></activity>
+
 
         <provider
             android:authorities="com.example.administrator.breezeallcode.ContentProvider.BookProvider"
