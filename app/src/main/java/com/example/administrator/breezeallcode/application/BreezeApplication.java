@@ -18,6 +18,9 @@ public class BreezeApplication extends Application{
         super.onCreate();
         mInstance = this;
 
+        CrashHandler crashHandler = CrashHandler.getInstance();
+        crashHandler.init(this);
+
         if (Constant.IsTest && Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD)
             //strictMode检测:检测两个问题，一是线程策略（ThreadPolicy）,二是VM策略（VmPolicy）
 //        线程策略检测的内容有
